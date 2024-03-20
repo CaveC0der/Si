@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  scrollbar-width: thin;
+}
+
+*::-webkit-scrollbar {
+  width: 15px;
+}
+
+@supports (overflow-wrap: anywhere) {
+  .break-anywhere {
+    overflow-wrap: anywhere;
+  }
+}
+
+@supports not (overflow-wrap: anywhere) {
+  .break-anywhere {
+    word-break: break-word;
+  }
+}
+
+.logo-bg {
+  --bg-color: rgba(100, 116, 139, 0.5);
+  background:
+    linear-gradient(var(--bg-color), var(--bg-color)),
+    url(./logo.svg) no-repeat 50% 50%;
+  background-size: 90% 90%;
+}
