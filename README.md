@@ -39,5 +39,5 @@ VITE_SERVER_URL=http://localhost:7000
 **Start dev server**
 
 ```bash
-  pnpm dev
+  pnpm apps:dev
 ```
