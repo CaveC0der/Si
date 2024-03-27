@@ -41,3 +41,9 @@ VITE_SERVER_URL=http://localhost:7000
 ```bash
   pnpm apps:dev
 ```
+
+## Docker
+
+```bash
+  docker compose up -d
+```
