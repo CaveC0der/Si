@@ -1,0 +1,26 @@
+services:
+  server:
+    container_name: simple_chat_server
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: server
+    ports:
+      - "7000:7000"
+    environment:
+      - PORT=7000
+      - ORIGIN=http://localhost:5173
+      - CLEAR_MESSAGES_INTERVAL=600000
+
+  web:
+    container_name: simple_chat_web
+    depends_on:
+      - server
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: web
+    ports:
+      - "5173:80"
+    environment:
+      - VITE_SERVER_URL=http://localhost:7000
